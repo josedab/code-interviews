@@ -2,19 +2,20 @@ package com.josedab.interviewbit.math;
 
 /**
  * Determine whether an integer is a palindrome. Do this without extra space.
- *
+ * <p>
  * A palindrome integer is an integer x for which reverse(x) = x where reverse(x) is x with its digit reversed.
  * Negative numbers are not palindromic.
- *
+ * <p>
  * Example :
- *
+ * <p>
  * Input : 12121
  * Output : True
- * 
+ * <p>
  * Input : 123
  * Output : False
  */
 public class PalindromeInteger {
+
     public boolean isPalindrome(int a) {
 
         if (a < 0) {
@@ -36,6 +37,30 @@ public class PalindromeInteger {
         }
 
         return true;
+    }
+
+    // Solution 2: Without considering discrete mathematics
+    public boolean isPalindrome2(int a) {
+        String number = String.valueOf(a);
+        return number.equals(new StringBuilder(number).reverse().toString());
+
+    }
+
+    // Solution 3: Destructuring and building the integer again based on 10 base factorizations
+    public boolean isPalindrome3(int a) {
+        if (a == check(a))
+            return true;
+        else
+            return false;
+    }
+
+    private int check(int num) {
+        int reverted = 0;
+        while (num > 0) {
+            reverted = reverted * 10 + num % 10;
+            num /= 10;
+        }
+        return reverted;
     }
 
     public static void main(String[] args) {
