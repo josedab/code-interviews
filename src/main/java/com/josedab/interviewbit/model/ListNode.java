@@ -1,4 +1,4 @@
-package com.josedab.interviewbit.linkedlist;
+package com.josedab.interviewbit.model;
 
 /**
  * Represents a node from a single linked list
@@ -8,7 +8,7 @@ public class ListNode {
     public int val;
     public ListNode next;
 
-    ListNode(int x) {
+    public ListNode(int x) {
         val = x;
         next = null;
     }
