@@ -9,7 +9,7 @@ import com.josedab.interviewbit.utils.ListNodeUtils;
 
  For example, given following linked lists :
 
- 5 -> 8 -> 20 
+ 5 -> 8 -> 20
  4 -> 11 -> 15
  The merged list should be :
 
