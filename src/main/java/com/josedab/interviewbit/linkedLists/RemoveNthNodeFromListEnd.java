@@ -13,6 +13,14 @@ import com.josedab.interviewbit.utils.ListNodeUtils;
  Note:
  If n is greater than the size of the list, remove the first node of the list.
  Try doing it using constant additional space.
+
+ Note for optimization: from editorial
+ There are 2 approaches :
+ 1) Find out the length of the list in one go. Then you know the number of node to be removed.
+ Traverse to the node and remove it.
+ 2) Make the first pointer go n nodes. Then move the second and first pointer simultaneously.
+ This way, the first pointer is always ahead of the second pointer by n nodes.
+ So when first pointer reaches the end, you are on the node to be removed.
  */
 public class RemoveNthNodeFromListEnd {
     public ListNode removeNthFromEnd(ListNode A, int B) {
@@ -51,6 +59,35 @@ public class RemoveNthNodeFromListEnd {
             pointer = pointer.next;
         }
         return result;
+    }
+
+    // Two pointers solution
+    // Advance b steps first one, use the second one to advance the necessary steps only
+    public ListNode removeNthFromEndOptimization(ListNode a, int b) {
+        if (a == null)
+            return a;
+        int len = 0;
+        ListNode temp = a;
+        while (temp != null) {
+            len++;
+            temp = temp.next;
+        }
+        if (b >= len) {
+            return a.next;
+        } else {
+            int it = len + 1 - b;
+            temp = a;
+            for (int i = 1; i < it - 1; i++) {
+                temp = temp.next;
+            }
+            ListNode rm = temp.next;
+            if (rm.next == null)
+                temp.next = null;
+            else {
+                temp.next = rm.next;
+            }
+            return a;
+        }
     }
 
     public static void main(String[] args) {
