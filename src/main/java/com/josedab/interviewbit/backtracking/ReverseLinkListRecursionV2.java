@@ -12,7 +12,7 @@ import com.josedab.interviewbit.utils.ListNodeUtils;
  * return 5->4->3->2->1->NULL.
  */
 public class ReverseLinkListRecursionV2 {
-    
+
     public ListNode reverseList(ListNode A) {
         if (A == null) {
             return null;
