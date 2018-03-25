@@ -1,4 +1,4 @@
-package com.josedab.interviewbit.hashcode;
+package com.josedab.interviewbit.hashing;
 
 
 import java.util.HashMap;
