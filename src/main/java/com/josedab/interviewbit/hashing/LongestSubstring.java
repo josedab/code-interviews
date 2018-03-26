@@ -17,7 +17,39 @@ import java.util.Map;
 
  */
 public class LongestSubstring {
-    public int lengthOfLongestSubstring(String a) {
+
+    public int lengthOfLongestSubstring(String A) {
+        Map<Character, Integer> positions = new HashMap<Character, Integer>();
+        int result = 0;
+        int[] lastCharacterIndex = new int[A.length()];
+
+        for (int i = 0; i < A.length(); i++) {
+            Character c = A.charAt(i);
+            if (!positions.containsKey(c)) {
+                lastCharacterIndex[i] = -1;
+            } else {
+                lastCharacterIndex[i] = positions.get(c);
+            }
+            positions.put(c, i);
+        }
+
+        lastCharacterIndex[0] = 1;
+        if (A.length() == 1) {
+            result = 1;
+        }
+        for (int i = 1; i < A.length(); i++) {
+            int maxLengthForIndex =
+                    lastCharacterIndex[i] == -1 ?
+                            1 + lastCharacterIndex[i - 1] :
+                            Math.min(i - lastCharacterIndex[i], 1 + lastCharacterIndex[i - 1]);
+            lastCharacterIndex[i] = maxLengthForIndex;
+            result = Math.max(result,
+                    maxLengthForIndex);
+        }
+        return result;
+    }
+
+    public int lengthOfLongestSubstringAlternative(String a) {
 
         Map<Character, Integer> map = new HashMap<Character, Integer>();
         int max = 0;
