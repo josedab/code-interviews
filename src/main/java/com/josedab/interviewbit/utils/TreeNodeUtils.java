@@ -2,6 +2,7 @@ package com.josedab.interviewbit.utils;
 
 import com.josedab.interviewbit.model.TreeNode;
 
+import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.List;
 
@@ -40,6 +41,44 @@ public class TreeNodeUtils {
 
         }
         return result;
+    }
+
+    public static ArrayList<Integer> getNodesInPreOrderTraversal(TreeNode A) {
+        ArrayList<Integer> result = new ArrayList<Integer>();
+        if (A != null) {
+            preorderTraversalHelper(A, result);
+        }
+        return result;
+
+    }
+
+    private static void preorderTraversalHelper(TreeNode tn, ArrayList<Integer> result) {
+        result.add(tn.val);
+        if (tn.left != null) {
+            preorderTraversalHelper(tn.left, result);
+        }
+        if (tn.right != null) {
+            preorderTraversalHelper(tn.right, result);
+        }
+    }
+
+    public static ArrayList<Integer> getNodesInOrderTraversal(TreeNode A) {
+        ArrayList<Integer> result = new ArrayList<Integer>();
+        if (A != null) {
+            inorderTraversalHelper(A, result);
+        }
+        return result;
+
+    }
+
+    private static void inorderTraversalHelper(TreeNode tn, List<Integer> result) {
+        if (tn.left != null) {
+            inorderTraversalHelper(tn.left, result);
+        }
+        result.add(tn.val);
+        if (tn.right != null) {
+            inorderTraversalHelper(tn.right, result);
+        }
     }
 
 }
