@@ -41,12 +41,12 @@ public class IdenticalBinaryTrees {
     public static void main(String[] args) {
         IdenticalBinaryTrees solution = new IdenticalBinaryTrees();
 
-        TreeNode treeProblem1 = TreeNodeUtils.createTreeNodeListFromInOrderSequence(3, 4, 5, 6, -1, -1, -1);
-        TreeNode treeProblem2 = TreeNodeUtils.createTreeNodeListFromInOrderSequence(3, 4, 5, 6, -1, -1, -1);
+        TreeNode treeProblem1 = TreeNodeUtils.createTreeNodeListFromPreOrderSequence(3, 4, 5, 6, -1, -1, -1);
+        TreeNode treeProblem2 = TreeNodeUtils.createTreeNodeListFromPreOrderSequence(3, 4, 5, 6, -1, -1, -1);
         System.out.println(solution.isSameTree(treeProblem1, treeProblem2));
 
-        treeProblem1 = TreeNodeUtils.createTreeNodeListFromInOrderSequence(3, 4, 5, 6, 2, -1, -1);
-        treeProblem2 = TreeNodeUtils.createTreeNodeListFromInOrderSequence(3, 4, 5, 6, -1, -1, -1);
+        treeProblem1 = TreeNodeUtils.createTreeNodeListFromPreOrderSequence(3, 4, 5, 6, 2, -1, -1);
+        treeProblem2 = TreeNodeUtils.createTreeNodeListFromPreOrderSequence(3, 4, 5, 6, -1, -1, -1);
         System.out.println(solution.isSameTree(treeProblem1, treeProblem2));
     }
 }

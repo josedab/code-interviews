@@ -35,7 +35,7 @@ public class MinDepthBinaryTree {
 
     public static void main(String[] args) {
         MinDepthBinaryTree solution = new MinDepthBinaryTree();
-        TreeNode problem = TreeNodeUtils.createTreeNodeListFromInOrderSequence(1, 2, -1);
+        TreeNode problem = TreeNodeUtils.createTreeNodeListFromPreOrderSequence(1, 2, -1);
         System.out.println(solution.minDepth(problem));
     }
 

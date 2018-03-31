@@ -62,8 +62,7 @@ public class BstIteratorV2 {
             return -1;
         }
 
-        TreeNode node;
-        node = stack.pop();
+        TreeNode node = stack.pop();
         int val = node.val;
 
         node = node.right;
@@ -76,7 +75,7 @@ public class BstIteratorV2 {
     }
 
     public static void main(String[] args) {
-        BstIteratorV2 it = new BstIteratorV2(TreeNodeUtils.createTreeNodeListFromInOrderSequence(5, 3, 7, 1, 4, 6, 10));
+        BstIteratorV2 it = new BstIteratorV2(TreeNodeUtils.createTreeNodeListFromPreOrderSequence(5, 3, 7, 1, 4, 6, 10));
         while (it.hasNext()) {
             System.out.print(it.next() + " ");
         }

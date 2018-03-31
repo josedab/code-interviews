@@ -7,7 +7,7 @@ import java.util.List;
 
 public class TreeNodeUtils {
 
-    public static TreeNode createTreeNodeListFromInOrderSequence(int... arrayOfIntegers) {
+    public static TreeNode createTreeNodeListFromPreOrderSequence(int... arrayOfIntegers) {
         TreeNode result = null;
         int indexOfParents = 0;
         List<TreeNode> queue = new LinkedList<TreeNode>();

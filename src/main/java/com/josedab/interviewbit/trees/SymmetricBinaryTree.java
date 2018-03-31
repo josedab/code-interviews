@@ -41,9 +41,9 @@ public class SymmetricBinaryTree {
     public static void main(String[] args) {
         SymmetricBinaryTree solution = new SymmetricBinaryTree();
         System.out.println(solution.isSymmetric(
-                TreeNodeUtils.createTreeNodeListFromInOrderSequence(1, 2, 2, 3, 4, 4, 3)));
+                TreeNodeUtils.createTreeNodeListFromPreOrderSequence(1, 2, 2, 3, 4, 4, 3)));
         System.out.println(solution.isSymmetric(
-                TreeNodeUtils.createTreeNodeListFromInOrderSequence(1, 2, 2, -1, 3, -1, 3)));
+                TreeNodeUtils.createTreeNodeListFromPreOrderSequence(1, 2, 2, -1, 3, -1, 3)));
 
     }
 }

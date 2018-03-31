@@ -20,7 +20,7 @@ import java.util.List;
  return [1,3,2].
 
  */
-public class InorderTraversalRecursive {
+public class InOrderTraversalRecursive {
     public ArrayList<Integer> inorderTraversal(TreeNode A) {
         ArrayList<Integer> result = new ArrayList<Integer>();
         inOrderAux(A, result);
@@ -42,8 +42,8 @@ public class InorderTraversalRecursive {
     }
 
     public static void main(String[] args) {
-        InorderTraversalRecursive solution = new InorderTraversalRecursive();
-        TreeNode problem = TreeNodeUtils.createTreeNodeListFromInOrderSequence(1, -1, 2, 3, -1);
+        InOrderTraversalRecursive solution = new InOrderTraversalRecursive();
+        TreeNode problem = TreeNodeUtils.createTreeNodeListFromPreOrderSequence(1, -1, 2, 3, -1);
         System.out.println(solution.inorderTraversal(problem));
     }
 }
