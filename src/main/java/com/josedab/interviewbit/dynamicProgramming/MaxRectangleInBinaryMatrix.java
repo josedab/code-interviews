@@ -22,18 +22,18 @@ import java.util.List;
 
  */
 public class MaxRectangleInBinaryMatrix {
-    public int maximalRectangle(List<List<Integer>> A) {
-        int[][] dp = new int[A.size()][A.get(0).size()];
-        for (int j = 0; j < A.get(0).size(); j++) {
-            dp[0][j] = A.get(0).get(j);
+    public int maximalRectangle(List<List<Integer>> matrix) {
+        int[][] dp = new int[matrix.size()][matrix.get(0).size()];
+        for (int j = 0; j < matrix.get(0).size(); j++) {
+            dp[0][j] = matrix.get(0).get(j);
         }
 
         int result = maxArea(dp[0]);
 
-        for (int i = 1; i < A.size(); i++) {
-            for (int j = 0; j < A.get(0).size(); j++) {
-                if (A.get(i).get(j) == 1) {
-                    dp[i][j] = A.get(i).get(j) + dp[i - 1][j];
+        for (int i = 1; i < matrix.size(); i++) {
+            for (int j = 0; j < matrix.get(0).size(); j++) {
+                if (matrix.get(i).get(j) == 1) {
+                    dp[i][j] = matrix.get(i).get(j) + dp[i - 1][j];
                 }
             }
             result = Math.max(result, maxArea(dp[i]));
@@ -41,6 +41,25 @@ public class MaxRectangleInBinaryMatrix {
         return result;
     }
 
+    public int maximalRectangleOfficialSolution(List<List<Integer>> matrix) {
+        if (matrix.size() == 0) return 0;
+        int[][] dp = new int[matrix.size()][matrix.get(0).size()];
+        int maxRec = 0;
+        for (int i = 0; i < dp.length; i++) {
+            for (int j = 0; j < dp[0].length; j++) {
+                int num = matrix.get(i).get(j);
+                if (j == 0) dp[i][j] = num == 1 ? 1 : 0;
+                else dp[i][j] = num == 1 ? dp[i][j - 1] + 1 : 0;
+                int row = i, width = dp[i][j];
+                while (row >= 0 && dp[row][j] > 0) {
+                    width = Math.min(width, dp[row][j]);
+                    maxRec = Math.max(maxRec, width * (i - row + 1));
+                    row--;
+                }
+            }
+        }
+        return maxRec;
+    }
 
     // Naive solution for calculating max area of a histogram
     // This problem extrapolates to the Container With most water problem
