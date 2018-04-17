@@ -24,9 +24,27 @@ public class ExcelColumnTitle {
         return buf.reverse().toString();
     }
 
+    public String convertToTitleV2(int num) {
+        StringBuilder sb = new StringBuilder();
+        while (num > 0) {
+            int offset = (num % 26);
+            Character c = (char) ('A' + offset - 1);
+            if (offset == 0) {
+                c = 'Z';
+                num--;
+            }
+            sb.append(c);
+            num = num / 26;
+        }
+        return sb.reverse().toString();
+    }
+
     public static void main(String[] args) {
         ExcelColumnTitle solution = new ExcelColumnTitle();
         System.out.println(solution.convertToTitle(27));
         System.out.println(solution.convertToTitle(943566));
+
+        System.out.println(solution.convertToTitleV2(676));
+        System.out.println(solution.convertToTitleV2(702));
     }
 }

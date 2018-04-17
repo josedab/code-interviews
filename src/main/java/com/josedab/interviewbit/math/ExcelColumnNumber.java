@@ -27,5 +27,6 @@ public class ExcelColumnNumber {
         ExcelColumnNumber solution = new ExcelColumnNumber();
         System.out.println(solution.titleToNumber("A"));
         System.out.println(solution.titleToNumber("AA"));
+        System.out.println(solution.titleToNumber("ZZ"));
     }
 }
