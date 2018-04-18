@@ -37,6 +37,28 @@ public class Anagrams {
         return new String(chars);
     }
 
+    // Second timing
+    public ArrayList<ArrayList<Integer>> anagramsV2Duplicated(final List<String> A) {
+        Map<String, ArrayList<Integer>> map = new HashMap<String, ArrayList<Integer>>();
+        ArrayList<ArrayList<Integer>> result = new ArrayList<ArrayList<Integer>>();
+        int index = 1;
+        for (String str : A) {
+            char[] chars = str.toCharArray();
+            Arrays.sort(chars);
+            String key = new String(chars);
+            if (map.containsKey(key)) {
+                map.get(key).add(index);
+            } else {
+                ArrayList<Integer> individualResult = new ArrayList<Integer>();
+                individualResult.add(index);
+                map.put(key, individualResult);
+                result.add(individualResult);
+            }
+            index++;
+        }
+        return result;
+    }
+
     public static void main(String[] args) {
         List<String> test = new LinkedList<String>(Arrays.asList("cat", "dog", "god", "tca"));
 
