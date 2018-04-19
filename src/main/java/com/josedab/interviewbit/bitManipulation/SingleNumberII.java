@@ -36,6 +36,7 @@ public class SingleNumberII {
 
     public static void main(String []args){
         SingleNumberII solution = new SingleNumberII();
+        System.out.println(Integer.valueOf("1"));
         System.out.println(solution.singleNumber(Arrays.asList(1, 2, 4, 3, 3, 2, 2, 3, 1, 1)));
     }
 }
