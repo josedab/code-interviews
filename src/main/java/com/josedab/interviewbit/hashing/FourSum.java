@@ -30,10 +30,10 @@ import java.util.Set;
  Solution based on each of the results being values of the array that have different indexes
  */
 public class FourSum {
-    public ArrayList<ArrayList<Integer>> fourSum(List<Integer> A, int target) {
-        Collections.sort(A);
-        Integer[] num = new Integer[A.size()];
-        num = A.toArray(num);
+    public ArrayList<ArrayList<Integer>> fourSum(List<Integer> list, int target) {
+        Collections.sort(list);
+        Integer[] num = new Integer[list.size()];
+        num = list.toArray(num);
         Set<ArrayList<Integer>> hashSet = new HashSet<>();
         ArrayList<ArrayList<Integer>> result = new ArrayList<ArrayList<Integer>>();
 

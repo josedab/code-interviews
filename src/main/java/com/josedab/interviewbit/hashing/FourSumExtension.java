@@ -34,8 +34,8 @@ import java.util.TreeSet;
 
  */
 public class FourSumExtension {
-    public ArrayList<ArrayList<Integer>> fourSum(List<Integer> A, int target) {
-        Collections.sort(A);
+    public ArrayList<ArrayList<Integer>> fourSum(List<Integer> list, int target) {
+        Collections.sort(list);
         Map<Integer, List<Pair>> map = new HashMap<Integer, List<Pair>>();
         Set<ArrayList<Integer>> setOfResults = new TreeSet<ArrayList<Integer>>(
                 (ArrayList<Integer> o1, ArrayList<Integer> o2) -> {
@@ -50,24 +50,24 @@ public class FourSumExtension {
                     return result;
                 });
 
-        for (int i = 0; i < A.size(); i++) {
-            for (int j = i; j < A.size(); j++) {
-                int value = target - A.get(i) - A.get(j);
+        for (int i = 0; i < list.size(); i++) {
+            for (int j = i; j < list.size(); j++) {
+                int value = target - list.get(i) - list.get(j);
                 List<Pair> pairs = map.get(value);
                 if (pairs == null) {
                     pairs = new LinkedList<>();
                     map.put(value, pairs);
                 }
-                pairs.add(new Pair(A.get(i), A.get(j)));
+                pairs.add(new Pair(list.get(i), list.get(j)));
             }
         }
 
-        for (int i = 0; i < A.size(); i++) {
-            for (int j = i; j < A.size(); j++) {
-                int value = A.get(i) + A.get(j);
+        for (int i = 0; i < list.size(); i++) {
+            for (int j = i; j < list.size(); j++) {
+                int value = list.get(i) + list.get(j);
                 List<Pair> pairs = map.get(value);
                 if (pairs != null) {
-                    Pair currentPair = new Pair(A.get(i), A.get(j));
+                    Pair currentPair = new Pair(list.get(i), list.get(j));
                     for (Pair pair : pairs) {
                         setOfResults.add(mergePairs(pair, currentPair));
                     }
