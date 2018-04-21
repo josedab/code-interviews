@@ -21,7 +21,7 @@ import com.josedab.interviewbit.utils.TreeNodeUtils;
  NOTE : You may assume 1 <= k <= Total number of nodes in BST
 
  Official solution
- For improved solution see @{@link KthSmallestElementInTreeAlternative}
+ For improved solution see @{@link KthSmallestElementInTreeRecursion} and {@link KthSmallestElementInTreeStack}
  */
 public class KthSmallestElementInTree {
     public int kthsmallest(TreeNode root, int nthLowest) {

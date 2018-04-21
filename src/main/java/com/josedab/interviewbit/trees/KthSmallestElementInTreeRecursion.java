@@ -28,7 +28,7 @@ import com.josedab.interviewbit.utils.TreeNodeUtils;
  TODO:
  Work on a benchmark
  */
-public class KthSmallestElementInTreeAlternative {
+public class KthSmallestElementInTreeRecursion {
 
     private class Counter {
         int count = 1;
@@ -72,7 +72,7 @@ public class KthSmallestElementInTreeAlternative {
     }
 
     public static void main(String[] args) {
-        KthSmallestElementInTreeAlternative solution = new KthSmallestElementInTreeAlternative();
+        KthSmallestElementInTreeRecursion solution = new KthSmallestElementInTreeRecursion();
         TreeNode problem = TreeNodeUtils.createTreeNodeListFromPreOrderSequence(2, 1, 3);
         System.out.println(solution.kthsmallest(problem, 2));
     }
