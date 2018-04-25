@@ -18,6 +18,13 @@ import java.math.BigInteger;
  0.1 < 1.1 < 1.2 < 1.13 < 1.13.4
 
  Easier to read solution: {@link CompareVersionNumbers}
+ This solution takes into consideration versions equality where sub versions are 0.
+ Example: v1=12.1 , v2=12.1.0 (v1 and v2 are the same)
+ It also takes into considerations version numbers where Integer or Long type cannot hold the value (a bit unrealistic
+ on real life, if that happens, you have bigger issues than actually worrying about version comparison)
+ This is the solution proposed on InterviewBit in order to pass the tests.
+ Solution {@link CompareVersionNumbers} does not have these things into consideration but goes for the realistic
+ approach, which is easier to read and less hacky.
  */
 public class CompareVersionNumbersBigInteger {
 
@@ -48,7 +55,6 @@ public class CompareVersionNumbersBigInteger {
         }
 
         if (difference.equals(BigInteger.ZERO)) {
-            //difference = BigInteger.valueOf(versionOne.length-versionTwo.length);
             if (versionOne.length - versionTwo.length < 0) {
                 for (int i = size; i < versionTwo.length; i++) {
                     difference = difference.subtract(versionTwo[i]);
