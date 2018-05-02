@@ -70,7 +70,7 @@ public class BstIterator {
     }
 
     public static void main(String[] args) {
-        BstIterator it = new BstIterator(TreeNodeUtils.createTreeNodeListFromPreOrderSequence(5, 3, 7, 1, 4, 6, 10));
+        BstIterator it = new BstIterator(TreeNodeUtils.createTreeNodeListFromOrderedNodeLayerSequence(5, 3, 7, 1, 4, 6, 10));
         while (it.hasNext()) {
             System.out.print(it.next() + " ");
         }

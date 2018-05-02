@@ -50,7 +50,7 @@ public class BinaryTreeFromInOrderAndPostOrder {
         BinaryTreeFromInOrderAndPostOrder solution = new BinaryTreeFromInOrderAndPostOrder();
         List<Integer> inOrder = Arrays.asList(2, 1, 3);
         List<Integer> postOrder = Arrays.asList(2, 3, 1);
-        System.out.println(TreeNodeUtils.getNodesInPreOrderTraversal(solution.buildTree(inOrder, postOrder)));
+        System.out.println(TreeNodeUtils.getNodesOrderedByLayers(solution.buildTree(inOrder, postOrder)));
 
     }
 

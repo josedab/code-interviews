@@ -55,7 +55,7 @@ public class RoofToLeafPathsWithSum {
 
     public static void main(String[] args) {
         RoofToLeafPathsWithSum solution = new RoofToLeafPathsWithSum();
-        TreeNode problem = TreeNodeUtils.createTreeNodeListFromPreOrderSequence(5, 4, 8, 11, -1, 13, 4, 7, 2, -1, -1, 5, 1);
+        TreeNode problem = TreeNodeUtils.createTreeNodeListFromOrderedNodeLayerSequence(5, 4, 8, 11, -1, 13, 4, 7, 2, -1, -1, 5, 1);
         System.out.println(solution.pathSum(problem, 22));
     }
 }

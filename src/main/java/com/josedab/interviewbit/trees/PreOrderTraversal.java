@@ -40,7 +40,7 @@ public class PreOrderTraversal {
 
     public static void main(String[] args) {
         PreOrderTraversal solution = new PreOrderTraversal();
-        TreeNode problem = TreeNodeUtils.createTreeNodeListFromPreOrderSequence(1, 2, 3, 4, 5, 6, 7);
+        TreeNode problem = TreeNodeUtils.createTreeNodeListFromOrderedNodeLayerSequence(1, 2, 3, 4, 5, 6, 7);
         System.out.println(solution.preorderTraversal(problem));
     }
 }

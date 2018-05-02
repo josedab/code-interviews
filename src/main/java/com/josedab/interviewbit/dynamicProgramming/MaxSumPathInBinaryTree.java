@@ -51,7 +51,7 @@ public class MaxSumPathInBinaryTree {
 
     public static void main(String[] args) {
         MaxSumPathInBinaryTree solution = new MaxSumPathInBinaryTree();
-        TreeNode problem = TreeNodeUtils.createTreeNodeListFromPreOrderSequence(1, 2, 3);
+        TreeNode problem = TreeNodeUtils.createTreeNodeListFromOrderedNodeLayerSequence(1, 2, 3);
         System.out.println(solution.maxPathSum(problem));
     }
 }

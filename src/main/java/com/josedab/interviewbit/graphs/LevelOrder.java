@@ -81,7 +81,7 @@ public class LevelOrder {
 
     public static void main(String[] args) {
         LevelOrder solution = new LevelOrder();
-        TreeNode problem = TreeNodeUtils.createTreeNodeListFromPreOrderSequence(3, 9, 20, -1, -1, 15, 7);
+        TreeNode problem = TreeNodeUtils.createTreeNodeListFromOrderedNodeLayerSequence(3, 9, 20, -1, -1, 15, 7);
         System.out.println(solution.levelOrder(problem));
     }
 }

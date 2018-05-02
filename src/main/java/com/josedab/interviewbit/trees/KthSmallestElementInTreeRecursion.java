@@ -73,7 +73,7 @@ public class KthSmallestElementInTreeRecursion {
 
     public static void main(String[] args) {
         KthSmallestElementInTreeRecursion solution = new KthSmallestElementInTreeRecursion();
-        TreeNode problem = TreeNodeUtils.createTreeNodeListFromPreOrderSequence(2, 1, 3);
+        TreeNode problem = TreeNodeUtils.createTreeNodeListFromOrderedNodeLayerSequence(2, 1, 3);
         System.out.println(solution.kthsmallest(problem, 2));
     }
 }

@@ -4,7 +4,6 @@ import com.josedab.interviewbit.model.TreeNode;
 import com.josedab.interviewbit.utils.TreeNodeUtils;
 
 import java.util.ArrayList;
-import java.util.List;
 import java.util.Stack;
 
 /**
@@ -48,7 +47,7 @@ public class InOrderTraversal {
 
     public static void main(String[] args) {
         InOrderTraversal solution = new InOrderTraversal();
-        TreeNode problem = TreeNodeUtils.createTreeNodeListFromPreOrderSequence(1, 2, 3, 4, 5, 6, 7);
+        TreeNode problem = TreeNodeUtils.createTreeNodeListFromOrderedNodeLayerSequence(1, 2, 3, 4, 5, 6, 7);
         System.out.println(solution.inorderTraversal(problem));
     }
 }

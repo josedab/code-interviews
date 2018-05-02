@@ -34,7 +34,7 @@ public class MaxDepthOfBinaryTree {
 
     public static void main(String[] args) {
         MaxDepthOfBinaryTree solution = new MaxDepthOfBinaryTree();
-        TreeNode problem = TreeNodeUtils.createTreeNodeListFromPreOrderSequence(1, 2, -1);
+        TreeNode problem = TreeNodeUtils.createTreeNodeListFromOrderedNodeLayerSequence(1, 2, -1);
         System.out.println(solution.maxDepth(problem));
     }
 }

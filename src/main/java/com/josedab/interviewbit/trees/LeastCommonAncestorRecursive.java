@@ -79,7 +79,7 @@ public class LeastCommonAncestorRecursive {
     }
 
     public static void main(String[] args) {
-        TreeNode problem = TreeNodeUtils.createTreeNodeListFromPreOrderSequence(1, 2, 3, 4, 5, 6, 7);
+        TreeNode problem = TreeNodeUtils.createTreeNodeListFromOrderedNodeLayerSequence(1, 2, 3, 4, 5, 6, 7);
         LeastCommonAncestorRecursive solution = new LeastCommonAncestorRecursive();
         System.out.println(solution.lca(problem, 4, 3));
         System.out.println(solution.lca(problem, 4, 30));

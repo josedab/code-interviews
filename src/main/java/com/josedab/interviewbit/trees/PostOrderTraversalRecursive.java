@@ -41,7 +41,7 @@ public class PostOrderTraversalRecursive {
 
     public static void main(String[] args) {
         PostOrderTraversalRecursive solution = new PostOrderTraversalRecursive();
-        TreeNode problem = TreeNodeUtils.createTreeNodeListFromPreOrderSequence(1, -1, 2, 3, -1);
+        TreeNode problem = TreeNodeUtils.createTreeNodeListFromOrderedNodeLayerSequence(1, -1, 2, 3, -1);
         System.out.println(solution.postorderTraversal(problem));
     }
 }

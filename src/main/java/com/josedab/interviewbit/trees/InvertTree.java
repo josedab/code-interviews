@@ -36,7 +36,7 @@ public class InvertTree {
 
     public static void main(String[] args) {
         InvertTree solution = new InvertTree();
-        TreeNode problem = TreeNodeUtils.createTreeNodeListFromPreOrderSequence(1, 2, 3, 4, 5);
+        TreeNode problem = TreeNodeUtils.createTreeNodeListFromOrderedNodeLayerSequence(1, 2, 3, 4, 5);
         System.out.println(TreeNodeUtils.getNodesInOrderTraversal(problem));
         TreeNode inversedTree = solution.invertTree(problem);
         System.out.println(TreeNodeUtils.getNodesInOrderTraversal(inversedTree));

@@ -67,7 +67,7 @@ public class ZigZagLevelOrderTraversalBT {
 
     public static void main(String[] args) {
         ZigZagLevelOrderTraversalBT solution = new ZigZagLevelOrderTraversalBT();
-        TreeNode problem = TreeNodeUtils.createTreeNodeListFromPreOrderSequence(3, 9, 20, -1, -1, 15, 7);
+        TreeNode problem = TreeNodeUtils.createTreeNodeListFromOrderedNodeLayerSequence(3, 9, 20, -1, -1, 15, 7);
         System.out.println(solution.zigzagLevelOrder(problem));
     }
 

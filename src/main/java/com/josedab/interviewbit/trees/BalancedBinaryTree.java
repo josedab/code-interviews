@@ -62,8 +62,8 @@ public class BalancedBinaryTree {
 
     public static void main(String []args){
         BalancedBinaryTree solution = new BalancedBinaryTree();
-        System.out.println(solution.isBalanced(TreeNodeUtils.createTreeNodeListFromPreOrderSequence(1, 2,3)));
-        System.out.println(solution.isBalanced(TreeNodeUtils.createTreeNodeListFromPreOrderSequence(3, 2, -1, 1, -1)));
+        System.out.println(solution.isBalanced(TreeNodeUtils.createTreeNodeListFromOrderedNodeLayerSequence(1, 2,3)));
+        System.out.println(solution.isBalanced(TreeNodeUtils.createTreeNodeListFromOrderedNodeLayerSequence(3, 2, -1, 1, -1)));
 
     }
 }

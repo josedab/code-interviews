@@ -8,7 +8,7 @@ import java.util.List;
 
 public class TreeNodeUtils {
 
-    public static TreeNode createTreeNodeListFromPreOrderSequence(int... arrayOfIntegers) {
+    public static TreeNode createTreeNodeListFromOrderedNodeLayerSequence(int... arrayOfIntegers) {
         TreeNode result = null;
         int indexOfParents = 0;
         List<TreeNode> queue = new LinkedList<TreeNode>();
@@ -43,7 +43,7 @@ public class TreeNodeUtils {
         return result;
     }
 
-    public static ArrayList<Integer> getNodesInPreOrderTraversal(TreeNode A) {
+    public static ArrayList<Integer> getNodesOrderedByLayers(TreeNode A) {
         ArrayList<Integer> result = new ArrayList<Integer>();
         if (A != null) {
             preorderTraversalHelper(A, result);

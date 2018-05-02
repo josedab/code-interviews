@@ -53,7 +53,7 @@ public class FlattenBinaryTreeToLinkedList {
 
     public static void main(String []args){
         FlattenBinaryTreeToLinkedList solution = new FlattenBinaryTreeToLinkedList();
-        TreeNode problem = TreeNodeUtils.createTreeNodeListFromPreOrderSequence(1, 2, 5, 3, 4, -1, 6);
-        System.out.println(TreeNodeUtils.getNodesInPreOrderTraversal(solution.flatten(problem)));
+        TreeNode problem = TreeNodeUtils.createTreeNodeListFromOrderedNodeLayerSequence(1, 2, 5, 3, 4, -1, 6);
+        System.out.println(TreeNodeUtils.getNodesOrderedByLayers(solution.flatten(problem)));
     }
 }

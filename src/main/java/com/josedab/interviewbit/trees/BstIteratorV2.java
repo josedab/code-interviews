@@ -75,7 +75,7 @@ public class BstIteratorV2 {
     }
 
     public static void main(String[] args) {
-        BstIteratorV2 it = new BstIteratorV2(TreeNodeUtils.createTreeNodeListFromPreOrderSequence(5, 3, 7, 1, 4, 6, 10));
+        BstIteratorV2 it = new BstIteratorV2(TreeNodeUtils.createTreeNodeListFromOrderedNodeLayerSequence(5, 3, 7, 1, 4, 6, 10));
         while (it.hasNext()) {
             System.out.print(it.next() + " ");
         }

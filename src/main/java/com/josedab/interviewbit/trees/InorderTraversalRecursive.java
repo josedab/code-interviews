@@ -43,7 +43,7 @@ public class InOrderTraversalRecursive {
 
     public static void main(String[] args) {
         InOrderTraversalRecursive solution = new InOrderTraversalRecursive();
-        TreeNode problem = TreeNodeUtils.createTreeNodeListFromPreOrderSequence(1, -1, 2, 3, -1);
+        TreeNode problem = TreeNodeUtils.createTreeNodeListFromOrderedNodeLayerSequence(1, -1, 2, 3, -1);
         System.out.println(solution.inorderTraversal(problem));
     }
 }
