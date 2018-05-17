@@ -25,6 +25,7 @@ public class CountAndSay {
         if (n == 0) return "";
 
         String str = "1";
+
         for (int i = 1; i < n; i++) {
             StringBuffer candidate = new StringBuffer();
             char previousChar = str.charAt(0);
