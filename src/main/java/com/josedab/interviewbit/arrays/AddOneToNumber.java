@@ -56,10 +56,40 @@ public class AddOneToNumber {
         return result;
     }
 
+    // Variation where there is not a reverse, just an initialization and sum over the elements of the array
+    // O(n) = 2n = n
+    public List<Integer> plusOneAlternative(List<Integer> list) {
+        List<Integer> result = new ArrayList<>();
+
+        int carryOver = 1;
+
+        int start = 0;
+        while (list.get(start) == 0 && start < (list.size() - 1)) start++;
+
+        // Initialization of the array
+        for (int i = start; i < list.size(); i++) {
+            result.add(0);
+        }
+        
+        for (int i = (list.size() - 1); i >= start; i--) {
+            int digit = list.get(i);
+            int num = digit + carryOver;
+            result.set(i - start, (num % 10));
+            carryOver = num / 10;
+        }
+        if (carryOver > 0) {
+            result.add(0, carryOver);
+        }
+
+        return result;
+    }
+
     public static void main(String[] args) {
         AddOneToNumber solution = new AddOneToNumber();
         System.out.println(solution.plusOne(Arrays.asList(1, 2, 3)));
         System.out.println(solution.plusOne(Arrays.asList(0)));
+        System.out.println(solution.plusOneAlternative(Arrays.asList(1, 2, 3)));
+        System.out.println(solution.plusOneAlternative(Arrays.asList(0)));
     }
 
 }
