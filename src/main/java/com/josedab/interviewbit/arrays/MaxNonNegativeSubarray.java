@@ -23,7 +23,7 @@ import java.util.List;
  */
 public class MaxNonNegativeSubarray {
 
-    public List<Integer> maxset(List<Integer> A) {
+    public List<Integer> maxset(List<Integer> list) {
 
         int idxStart = -1;
         int idxEnd = -1;
@@ -32,10 +32,10 @@ public class MaxNonNegativeSubarray {
         int start = 0;
         int end = 0;
         long sum = 0;
-        for (int i = 0; i < A.size(); i++) {
-            if (A.get(i) >= 0) {
+        for (int i = 0; i < list.size(); i++) {
+            if (list.get(i) >= 0) {
                 end = i;
-                sum += A.get(i);
+                sum += list.get(i);
                 if (sum >= maxSum) {
                     if (!(sum == maxSum && (end - start) < (idxEnd - idxStart))) {
                         maxSum = sum;
@@ -51,9 +51,31 @@ public class MaxNonNegativeSubarray {
 
         List<Integer> result = new ArrayList<>();
         for (int i = idxStart; i <= idxEnd && i >= 0; i++) {
-            result.add(A.get(i));
+            result.add(list.get(i));
         }
         return result;
+    }
+
+    // Official solution looks a bit cleaner but exactly the same logic
+    public ArrayList<Integer> maxsetOfficialSolution(ArrayList<Integer> a) {
+        long maxSum = 0;
+        long newSum = 0;
+        ArrayList<Integer> maxArray = new ArrayList<>();
+        ArrayList<Integer> newArray = new ArrayList<>();
+        for (Integer i : a) {
+            if (i >= 0) {
+                newSum += i;
+                newArray.add(i);
+            } else {
+                newSum = 0;
+                newArray = new ArrayList<>();
+            }
+            if ((maxSum < newSum) || ((maxSum == newSum) && (newArray.size() > maxArray.size()))) {
+                maxSum = newSum;
+                maxArray = newArray;
+            }
+        }
+        return maxArray;
     }
 
     public static void main(String[] args) {
