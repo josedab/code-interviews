@@ -70,7 +70,7 @@ public class AddOneToNumber {
         for (int i = start; i < list.size(); i++) {
             result.add(0);
         }
-        
+
         for (int i = (list.size() - 1); i >= start; i--) {
             int digit = list.get(i);
             int num = digit + carryOver;
