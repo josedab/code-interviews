@@ -1,59 +1,76 @@
 package com.josedab.interviewbit.backtracking;
 
 import java.util.ArrayList;
+import java.util.List;
 
 /**
- * Created by jbaena on 5/24/18.
+ * Given a string s, partition s such that every string of the partition is a palindrome.
+
+ Return all possible palindrome partitioning of s.
+
+ For example, given s = "aab",
+ Return
+
+ [
+ ["a","a","b"]
+ ["aa","b"],
+ ]
+ Ordering the results in the answer : Entry i will come before Entry j if :
+ len(Entryi[0]) < len(Entryj[0]) OR
+ (len(Entryi[0]) == len(Entryj[0]) AND len(Entryi[1]) < len(Entryj[1])) OR
+ *
+ *
+ *
+ (len(Entryi[0]) == len(Entryj[0]) AND … len(Entryi[k] < len(Entryj[k]))
+ In the given example,
+ ["a", "a", "b"] comes before ["aa", "b"] because len("a") < len("aa")
+
+
  */
 public class PalindromePartitioning {
-    public ArrayList<ArrayList<String>> partition(String str) {
-        ArrayList<ArrayList<String>> result = new ArrayList<ArrayList<String>>();
-        // temporary ArrayList to store each
-        // palindromic string
-        ArrayList<String> temp = new ArrayList<>();
 
-        // calling addString method it adds all
-        // the palindromic partitions to v
-        result = addStrings(result, str, temp, 0);
+    public List<List<String>> partition(String str) {
+        List<List<String>> result = new ArrayList<>();
+        List<String> candidate = new ArrayList<>();
+        result = addStrings(result, str, candidate, 0);
         return result;
     }
 
-    ArrayList<ArrayList<String>> addStrings(ArrayList<
-            ArrayList<String>> v, String s, ArrayList<String> temp,
-                                            int index) {
-        int len = s.length();
+    List<List<String>> addStrings(List<List<String>> results, String strCad,
+                                  List<String> candidate, int index) {
+        int len = strCad.length();
         String str = "";
-        ArrayList<String> current = new ArrayList<>(temp);
+        ArrayList<String> current = new ArrayList<>(candidate);
 
         if (index == 0)
-            temp.clear();
+            candidate.clear();
 
         // Iterate over the string
         for (int i = index; i < len; ++i) {
-            str = str + s.charAt(i);
+            str = str + str.charAt(i);
 
             // check whether the substring is
             // palindromic or not
             if (checkPalindrome(str)) {
                 // if palindrome add it to temp list
-                temp.add(str);
+                candidate.add(str);
 
                 if (i + 1 < len) {
                     // recurr to get all the palindromic
                     // partitions for the substrings
-                    v = addStrings(v, s, temp, i + 1);
+                    results = addStrings(results, str, candidate, i + 1);
                 } else {
                     // if end of the string is reached
                     // add temp to v
-                    v.add(temp);
+                    results.add(candidate);
                 }
 
                 // temp is reinitialize with the
                 // current i.
-                temp = new ArrayList<>(current);
+                candidate = new ArrayList<>(current);
             }
         }
-        return v;
+        return results;
     }
 
     boolean checkPalindrome(String str) {
