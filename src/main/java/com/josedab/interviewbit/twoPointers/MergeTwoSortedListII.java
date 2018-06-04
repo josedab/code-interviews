@@ -25,7 +25,7 @@ public class MergeTwoSortedListII {
     public void merge(List<Integer> listA, List<Integer> listB) {
         int aIndex = 0;
         int bIndex = 0;
-        
+
         //When we inserted all the items from 'b' into 'a' there is no need
         //to continue iteration
         while (bIndex < listB.size()) {
